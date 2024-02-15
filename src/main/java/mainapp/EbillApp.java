@@ -1,11 +1,7 @@
 package mainapp;
 
-
-
 import java.util.List;
 import java.util.Scanner;
-
-
 
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
@@ -18,7 +14,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.io.IOException;
 
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -27,8 +22,7 @@ import java.util.Arrays;
 import static mainapp.testutils.TestUtils.businessTestFile;
 import static mainapp.testutils.TestUtils.yakshaAssert;
 
-public class EbillApp {
-	
+public class MyApp {
 
 	public static void main(String[] args) throws IOException {
 		
