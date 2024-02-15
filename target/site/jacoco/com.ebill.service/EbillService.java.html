@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EbillService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">inventory-management-app</a> &gt; <a href="index.source.html" class="el_package">com.ebill.service</a> &gt; <span class="el_source">EbillService.java</span></div><h1>EbillService.java</h1><pre class="source lang-java linenums">package com.ebill.service;
+
+
+public class EbillService {
+private int units;
+	
+<span class="fc" id="L7">	public EbillService(int units) {</span>
+<span class="fc" id="L8">		this.units = units;</span>
+<span class="fc" id="L9">	}</span>
+	
+	public double calculateBillAmount() {
+<span class="fc" id="L12">		double amount=0.0;</span>
+		
+<span class="fc bfc" id="L14" title="All 2 branches covered.">		if (units &gt; 0) {</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">    		if (units &lt;= 50)</span>
+<span class="fc" id="L16">    	        amount = units * 2.60;</span>
+<span class="fc bfc" id="L17" title="All 2 branches covered.">    	  	else if (units &lt;= 100)</span>
+<span class="fc" id="L18">    	  		amount = 130 + ((units - 50) * 3.25);</span>
+<span class="fc bfc" id="L19" title="All 2 branches covered.">    	  	else if (units &lt;= 200)</span>
+<span class="fc" id="L20">    	  		amount = 130 + 162.50 + ((units - 100 ) * 5.26);</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">    	  	else if (units &lt;= 1000)</span>
+<span class="fc" id="L22">    		   	amount = 130 + 162.50 + 526 + ((units - 200 ) * 7.75); </span>
+<span class="pc bpc" id="L23" title="1 of 2 branches missed.">    	  	else if (units &lt;= 5000) </span>
+<span class="fc" id="L24">	  	      amount = 130 + 162.50 + 526 + 6200 + ((units - 1000) * 10);</span>
+    	  	else 
+<span class="nc" id="L26">    	  	    amount = 0.0;</span>
+		}
+<span class="fc" id="L28">		return amount;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
